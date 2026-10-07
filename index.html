@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Match Maker</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Match Maker</h1>
+  <p class="lead">Type two names and find out how well they match.</p>
+
+  <form id="form" novalidate>
+    <div>
+      <label for="name1"></label>
+      <input id="name1" type="text" autocomplete="off" maxlength="30" placeholder="">
+    </div>
+    <div>
+      <label for="name2"></label>
+      <input id="name2" type="text" autocomplete="off" maxlength="30" placeholder="">
+    </div>
+    <p id="error" class="error" role="alert"></p>
+    <button type="submit">Check compatibility</button>
+  </form>
+
+  <section id="result" class="result" aria-live="polite" hidden>
+    <div class="heart-wrap" id="heartWrap">
+      <svg viewBox="0 0 100 90" aria-hidden="true">
+        <defs><clipPath id="heartClip"><path id="heartPath" d="M50 85C20 60 2 42 2 24 2 11 12 2 25 2c11 0 20 6 25 14C55 8 64 2 75 2c13 0 23 9 23 22 0 18-18 36-48 61z"/></clipPath></defs>
+        <use href="#heartPath" style="fill: var(--heart-empty)"/>
+        <g clip-path="url(#heartClip)"><g class="heart-fill" id="heartFill"><rect x="0" y="0" width="100" height="90"/></g></g>
+      </svg>
+      <div class="score" id="score">0%</div>
+    </div>
+    <p class="names" id="names"></p>
+    <p class="message" id="message"></p>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
